@@ -1,15 +1,73 @@
 import { Text, View, StyleSheet, Image, ImageBackground, Dimensions, TouchableOpacity } from "react-native";
-import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context"
 
-const { height: windowHeight } = Dimensions.get("window");
-
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  background: {
+    flex: 1,
+    justifyContent: "center",
+    width: "100%",
+    height: Dimensions.get("window").height,
+  },
+  companyLogo: {
+    width: "100%",
+    alignItems: "center",
+    padding: 20,
+    marginBottom: 50,
+  },
+  textGroup: {
+    alignItems: "center",
+  },
+  textLarge: {
+    color: "white",
+    fontWeight: "800",
+    fontSize: 40,
+    textAlign: "center",
+    marginBottom: 12,
+  },
+  textSmall: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "200",
+    textAlign: "center",
+  },
+  transparentButton: {
+    borderColor: "white",
+    borderWidth: 2,
+    borderRadius: 40,
+    paddingVertical: 15,
+    paddingHorizontal: 5,
+    alignItems: "center",
+    fontSize: 20,
+    flex: 1,
+  },
+  button: {
+    borderColor: "white",
+    borderWidth: 2,
+    borderRadius: 40,
+    paddingVertical: 15,
+    paddingHorizontal: 5,
+    alignItems: "center",
+    fontSize: 20,
+    backgroundColor: "white",
+    flex: 1,
+  },
+  buttonGroup: {
+    flexDirection: "row",
+    gap: 20,
+    paddingHorizontal: 20,
+  },
+});
+   
 export default function Index() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1 }}>
         <ImageBackground
           source={require("@/assets/images/background-image.png")}
-          style={[styles.background, { height: windowHeight }]}
+          style={styles.background}
           resizeMode="cover"
         >
           <View style={styles.container}>
@@ -43,60 +101,3 @@ export default function Index() {
     </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  background: {
-    flex: 1,
-    justifyContent: "center",
-    width: "100%",
-  },
-  companyLogo: {
-    width: "100%",
-    alignItems: "center",
-    padding: 20,
-    marginBottom: 50,
-  },
-  textGroup: {
-    alignItems: "center",
-  },
-  textLarge: {
-    color: "white",
-    fontWeight: "800",
-    fontSize: 40,
-    textAlign: "center",
-    marginBottom: 12,
-  },
-  textSmall: {
-    color: "white",
-    fontSize: 18,
-    fontWeight: "200",
-    textAlign: "center",
-  },
-  transparentButton: {
-    borderColor: "white",
-    borderWidth: 2,
-    borderRadius: 40,
-    paddingVertical: 15,
-    paddingHorizontal: 5,
-    alignItems: "center",
-    flex: 1,
-  },
-  button: {
-    borderColor: "white",
-    borderWidth: 2,
-    borderRadius: 40,
-    paddingVertical: 15,
-    paddingHorizontal: 5,
-    alignItems: "center",
-    backgroundColor: "white",
-    flex: 1,
-  },
-  buttonGroup: {
-    flexDirection: "row",
-    gap: 20,
-    paddingHorizontal: 20,
-  },
-});
